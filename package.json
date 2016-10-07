@@ -1,0 +1,31 @@
+{
+  "name": "doku-tagger",
+  "description": "Tag german ARTE media library documentaries with country data.",
+  "version": "0.1.0",
+  "keywords": [],
+  "author": "Julius Tens <mail@juliustens.de>",
+  "homepage": "https://github.com/juliuste/doku-tagger",
+  "repository": "juliuste/doku-tagger",
+  "bugs": "https://github.com/juliuste/doku-tagger/issues",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "country.js",
+    "countries.json"
+  ],
+  "dependencies": {
+    "array-intersection": "^0.1.2",
+    "fast-levenshtein": "^2.0.5",
+    "feedparser": "^1.1.5",
+    "request": "^2.75.0",
+    "search-geonames": "0.0.10",
+    "slug": "^0.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+  },
+  "engine": {
+    "node": ">=6"
+  },
+  "license": "MIT"
+}
