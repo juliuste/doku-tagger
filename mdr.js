@@ -4,8 +4,8 @@ const got = require('got')
 const country = require('match-country-german')
 const he = require('he')
 
-const baseURL = 'http://swrmediathek.de/'
-const listURL = 'http://swrmediathek.de/content/doku.htm'
+const startURL = 'http://www.mdr.de/mediathek/themen/reportage/index.html'
+const baseURL = 'http://mdr.de/'
 
 const err = (error) => {throw new Error(error)}
 const push = (array, item) => {if(item) array.push(item)}
@@ -28,14 +28,25 @@ const parseKeywords = (keywords) => {
 	return countries
 }
 
+const parseStartURL = (res) => {
+	let html = res.body.replace(/\s/g, "")
+	const re = /mediathek\/themen\/reportage\/mediathek-reportagen-dokumentationen-100_([^"]+)"/g
+	let match = re.exec(html)
+	let links = []
+	while(match != null){
+		links.push('/mediathek/themen/reportage/mediathek-reportagen-dokumentationen-100_'+match[1])
+		match = re.exec(html)
+	}
+	return baseURL+links[0]
+}
 
 const parseListHTML = (res) => {
 	let html = res.body.replace(/\s/g, "")
-	const re = /player.htm\?show=([^"]+)"/g
+	const re = /<h4class="shortHeadline"><ahref="\/mediathek\/themen\/reportage\/video([^"]+)"/g
 	let match = re.exec(html)
 	let links = []
 	while (match != null) {
-		links.push('player.htm?show='+match[1])
+		links.push('/mediathek/themen/reportage/video'+match[1])
 		match = re.exec(html)
 	}
 	links = removeDuplicates(links)
@@ -57,13 +68,14 @@ const parseItemHTML = (res) => {
 	if(tags.length) countries = parseKeywords(tags[0].split(','))
 
 	// Title
-	re = /<meta property="og:title" content="([^"]+)"/g
+	re = /<meta property="og:title" content="([^"]+) \| MDR.DE"/g
 	match = re.exec(html)
 	const title = []
 	while (match != null) {
 		title.push(match[1])
 		match = re.exec(html)
 	}
+	title[0] = title[0].replace(' | MDR.DE', '')
 
 	// Description
 	re = /<meta name="description" content="([^"]+)"/g
@@ -83,12 +95,13 @@ const parseItemHTML = (res) => {
 		match = re.exec(html)
 	}
 
-	return (countries.length) ? {link: res.requestUrl, countries: countries, title: title[0], description: description[0], image: image[0], network: 'swr'} : null
+	return (countries.length) ? {link: res.requestUrl, countries: countries, title: title[0], description: description[0], image: image[0], network: 'mdr'} : null
 }
 
-const getURLs = () => got(listURL).then(parseListHTML, err)
+const getListURL = () => got(startURL).then(parseStartURL, err).then(getURLs, err)
+const getURLs = (listURL) => got(listURL).then(parseListHTML, err)
 const getTags = (url) => got(baseURL+url).then(parseItemHTML, err)
 
-const main = () => getURLs().then((links) => Promise.all(links.map(getTags)).then((tags) => removeEmpty(tags), err), err)
+const main = () => getListURL().then((links) => Promise.all(links.map(getTags)).then((tags) => removeEmpty(tags), err), err)
 
 module.exports = main
