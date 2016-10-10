@@ -9,7 +9,7 @@ Fetch information about documentaries in the **[ARTE](http://www.arte.tv/guide/d
 
 ## Usage
 
-The module has three methods: `all`, `arte`, `swr` and `dw`. Each method returns a `Promise` which resolves in a list of objects representing single documentaries:
+The module has four methods: `all`, `arte`, `swr` and `dw`. Each method returns a `Promise` which resolves in a list of objects representing single documentaries:
 
 ```javascript
 const dokus = require('doku-tagger')
