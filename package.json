@@ -1,12 +1,13 @@
 {
   "name": "doku-tagger",
-  "description": "Tag german ARTE and Deutsche Welle media library documentaries with country data.",
-  "version": "0.2.0",
+  "description": "Tag german ARTE, SWR and Deutsche Welle media library documentaries with country data.",
+  "version": "0.3.0",
   "keywords": [
     "german",
     "deutsche",
     "welle",
     "tv",
+    "swr",
     "arte",
     "documentary",
     "dokumentation",
@@ -25,11 +26,13 @@
   "files": [
     "index.js",
     "arte.js",
+    "swr.js",
     "dw.js"
   ],
   "dependencies": {
     "array-intersection": "^0.1.2",
     "got": "^6.5.0",
+    "he": "^1.1.0",
     "match-country-german": "^0.1.0",
     "simple-rss": "^1.0.0"
   },
