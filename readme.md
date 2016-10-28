@@ -1,6 +1,6 @@
 # doku-tagger
 
-Fetch information about documentaries in the **[ARTE](http://www.arte.tv/guide/de/plus7/?country=DE)**, **[MDR](http://www.mdr.de/mediathek/)**, **[SWR](http://swrmediathek.de)** and **[Deutsche Welle](http://www.dw.com/de/media-center/alle-inhalte/s-100814)** media libraries and try to match their tags with country data.
+Try to match meta data from documentaries in the **[ARTE](http://www.arte.tv/guide/de/plus7/?country=DE)**, **[MDR](http://www.mdr.de/mediathek/)**, **[SWR](http://swrmediathek.de)** and **[Deutsche Welle](http://www.dw.com/de/media-center/alle-inhalte/s-100814)** with country data using the [dokus](https://github.com/juliuste/dokus/) module.
 
 [![npm version](https://img.shields.io/npm/v/doku-tagger.svg)](https://www.npmjs.com/package/doku-tagger)
 [![dependency status](https://img.shields.io/david/juliuste/doku-tagger.svg)](https://david-dm.org/juliuste/doku-tagger)
@@ -21,15 +21,16 @@ will resolve in a list of objects which look like this:
 	{
 		title: '…',
 		description: '…',
+		tags: […],
 		countries: [ 'eg' ], // list tagged countries (never empty)
 		link: '…', // media library url
 		image: '…', // thumbnail
-		network: 'arte' // one of ['arte', 'swr', 'dw']
+		network: 'arte'
 	}
 ```
 
 ## Similar Projects
-
+- [dokus](https://github.com/juliuste/dokus/) - Fetch documentary meta data from multiple german media libraries.
 - [doku-karte](https://github.com/juliuste/doku-karte/) - "German documentaries sorted by country and displayed on a map."
 - [match-country-german](https://github.com/juliuste/match-country-german/) - "Try to match given german country name with its ISO code."
 
