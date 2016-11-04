@@ -33,7 +33,10 @@
     "match-country-german": "^0.2.0"
   },
   "devDependencies": {},
-  "scripts": {},
+  "scripts": {
+    "test": "node test.js",
+    "prepublish": "npm test"
+  },
   "engine": {
     "node": ">=6"
   },
