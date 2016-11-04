@@ -3,6 +3,8 @@
 const t = require('./index.js')
 const assert = require('assert')
 
+const err = (error) => {console.error(error); throw new Error(error)}
+
 const h = (network) => (items) => {
 	assert(items.length>0, network)
 	for(let item of items){
@@ -10,7 +12,7 @@ const h = (network) => (items) => {
 	}
 }
 
-t.arte().then(h('arte'), console.error)
-t.swr().then(h('swr'), console.error)
-t.mdr().then(h('mdr'), console.error)
-t.dw().then(h('dw'), console.error)
+t.arte().then(h('arte')).catch(err)
+t.swr().then(h('swr')).catch(err)
+t.mdr().then(h('mdr')).catch(err)
+t.dw().then(h('dw')).catch(err)

@@ -4,8 +4,6 @@ const dokus = require('dokus')
 const country = require('match-country-german')
 const ner = require('./ner')
 
-//const err = (error) => {throw new Error(error)}
-const err = console.error
 const push = (array, item) => {if(item) array.push(item)}
 const removeDuplicates = (list) => Array.from(new Set(list))
 
@@ -49,14 +47,14 @@ const parseByDescription = (item) => {
 	if(item.description){
 		return ner(item.description)
 		.then(nerToTags, (err) => Promise.resolve(null))
-		.then(tagsToCountries, err)
-		.then(addCountries(item), err)
+		.then(tagsToCountries)
+		.then(addCountries(item))
 	}
 	return item
 }
 const byDescription = (list) => {
 	const resList = Promise.all(list.map(parseByDescription))
-	return resList.then((list) => list.filter((el) => (el && el.countries && el.countries.length)), err)
+	return resList.then((list) => list.filter((el) => (el && el.countries && el.countries.length)))
 }
 
 const main = (list) => {
@@ -65,10 +63,10 @@ const main = (list) => {
 }
 
 // i'm sorry for what's below this line... it was an accident :D
-const all = () => dokus.all().then(main, (err) => {throw new Error(err)})
-const arte = () => dokus.arte().then(main, (err) => {throw new Error(err)})
-const dw = () => dokus.dw().then(main, (err) => {throw new Error(err)})
-const mdr = () => dokus.mdr().then(main, (err) => {throw new Error(err)})
-const swr = () => dokus.swr().then(main, (err) => {throw new Error(err)})
+const all = () => dokus.all().then(main)
+const arte = () => dokus.arte().then(main)
+const dw = () => dokus.dw().then(main)
+const mdr = () => dokus.mdr().then(main)
+const swr = () => dokus.swr().then(main)
 
 module.exports = {all, arte, mdr, swr, dw}
