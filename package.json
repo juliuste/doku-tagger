@@ -1,13 +1,14 @@
 {
   "name": "doku-tagger",
   "description": "Tag german media library documentaries with country data.",
-  "version": "0.6.0",
+  "version": "0.6.2",
   "keywords": [
     "german",
     "deutsche",
     "welle",
     "tv",
     "swr",
+    "rbb",
     "mdr",
     "arte",
     "documentary",
@@ -29,7 +30,7 @@
   ],
   "dependencies": {
     "dbpedia-spotlight": "^0.5.27",
-    "dokus": "^0.1.0",
+    "dokus": "^0.1.2",
     "match-country-german": "^0.2.0"
   },
   "devDependencies": {},

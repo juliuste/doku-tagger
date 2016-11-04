@@ -40,7 +40,7 @@ const parseByKeywords = (item) => {
 }
 const byKeywords = (list) => {
 	const resList = list.map(parseByKeywords)
-	return resList.filter((el) => (el.countries && el.countries.length))
+	return resList
 }
 
 const parseByDescription = (item) => {
@@ -67,6 +67,7 @@ const all = () => dokus.all().then(main)
 const arte = () => dokus.arte().then(main)
 const dw = () => dokus.dw().then(main)
 const mdr = () => dokus.mdr().then(main)
+const rbb = () => dokus.rbb().then(main)
 const swr = () => dokus.swr().then(main)
 
-module.exports = {all, arte, mdr, swr, dw}
+module.exports = {all, arte, mdr, swr, rbb, dw}

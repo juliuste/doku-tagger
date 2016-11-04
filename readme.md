@@ -1,6 +1,6 @@
 # doku-tagger
 
-Try to match meta data from documentaries in the **[ARTE](http://www.arte.tv/guide/de/plus7/?country=DE)**, **[MDR](http://www.mdr.de/mediathek/)**, **[SWR](http://swrmediathek.de)** and **[Deutsche Welle](http://www.dw.com/de/media-center/alle-inhalte/s-100814)** with country data using the [dokus](https://github.com/juliuste/dokus/) module.
+Try to match meta data from documentaries fetched using the [dokus](https://github.com/juliuste/dokus/) module with country data.
 
 [![npm version](https://img.shields.io/npm/v/doku-tagger.svg)](https://www.npmjs.com/package/doku-tagger)
 [![Build Status](https://travis-ci.org/juliuste/doku-tagger.svg?branch=master)](https://travis-ci.org/juliuste/doku-tagger)
@@ -10,7 +10,7 @@ Try to match meta data from documentaries in the **[ARTE](http://www.arte.tv/gui
 
 ## Usage
 
-The module has five methods: `all`, `arte`, `mdr`, `swr` and `dw`. Each method returns a `Promise` which resolves in a list of objects representing single documentaries:
+The module has a method `all` and a method for each media library supported by the [dokus](https://github.com/juliuste/dokus/) module like `arte`, `mdr`, etc… Each method returns a `Promise` which resolves in a list of objects representing single documentaries:
 
 ```javascript
 const dokus = require('doku-tagger')

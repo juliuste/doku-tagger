@@ -6,13 +6,14 @@ const assert = require('assert')
 const err = (error) => {console.error(error); throw new Error(error)}
 
 const h = (network) => (items) => {
-	assert(items.length>0, network)
-	for(let item of items){
-		assert(item.countries.length>0, network)
-	}
+	if(items.length>0)
+		for(let item of items){
+			assert(item.countries.length>0, network)
+		}
 }
 
 t.arte().then(h('arte')).catch(err)
 t.swr().then(h('swr')).catch(err)
 t.mdr().then(h('mdr')).catch(err)
+t.rbb().then(h('rbb')).catch(err)
 t.dw().then(h('dw')).catch(err)
