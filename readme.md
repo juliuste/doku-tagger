@@ -3,6 +3,7 @@
 Try to match meta data from documentaries in the **[ARTE](http://www.arte.tv/guide/de/plus7/?country=DE)**, **[MDR](http://www.mdr.de/mediathek/)**, **[SWR](http://swrmediathek.de)** and **[Deutsche Welle](http://www.dw.com/de/media-center/alle-inhalte/s-100814)** with country data using the [dokus](https://github.com/juliuste/dokus/) module.
 
 [![npm version](https://img.shields.io/npm/v/doku-tagger.svg)](https://www.npmjs.com/package/doku-tagger)
+[![Build Status](https://travis-ci.org/juliuste/doku-tagger.svg?branch=master)](https://travis-ci.org/juliuste/doku-tagger)
 [![dependency status](https://img.shields.io/david/juliuste/doku-tagger.svg)](https://david-dm.org/juliuste/doku-tagger)
 [![dev dependency status](https://img.shields.io/david/dev/juliuste/doku-tagger.svg)](https://david-dm.org/juliuste/doku-tagger#info=devDependencies)
 [![license](https://img.shields.io/github/license/juliuste/doku-tagger.svg?style=flat)](LICENSE)
