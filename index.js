@@ -65,9 +65,10 @@ const main = (list) => {
 // i'm sorry for what's below this line... it was an accident :D
 const all = () => dokus.all().then(main)
 const arte = () => dokus.arte().then(main)
+const daserste = () => dokus.daserste().then(main)
 const dw = () => dokus.dw().then(main)
 const mdr = () => dokus.mdr().then(main)
 const rbb = () => dokus.rbb().then(main)
 const swr = () => dokus.swr().then(main)
 
-module.exports = {all, arte, mdr, swr, rbb, dw}
+module.exports = {all, arte, daserste, mdr, swr, rbb, dw}
