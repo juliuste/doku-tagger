@@ -1,7 +1,7 @@
 {
   "name": "doku-tagger",
   "description": "Tag german media library documentaries with country data.",
-  "version": "0.6.3",
+  "version": "1.0.0",
   "keywords": [
     "german",
     "deutsche",
