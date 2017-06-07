@@ -13,7 +13,3 @@ const h = (network) => (items) => {
 }
 
 t.arte().then(h('arte')).catch(err)
-t.arte().then(h('daserste')).catch(err)
-t.swr().then(h('swr')).catch(err)
-t.mdr().then(h('mdr')).catch(err)
-t.dw().then(h('dw')).catch(err)
