@@ -20,15 +20,15 @@ dokus.all().then(…)
 ```
 will resolve in a list of objects which look like this:
 ```javascript
-	{
-		title: '…',
-		description: '…',
-		tags: […],
-		countries: [ 'eg' ], // list tagged countries (never empty)
-		link: '…', // media library url
-		image: '…', // thumbnail
-		network: 'arte'
-	}
+{
+	title: '…',
+	description: '…',
+	tags: […],
+	countries: [ 'eg' ], // list tagged countries (never empty)
+	link: '…', // media library url
+	image: '…', // thumbnail
+	network: 'arte'
+}
 ```
 
 ## Similar Projects
