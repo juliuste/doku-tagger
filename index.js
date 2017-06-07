@@ -46,9 +46,10 @@ const byKeywords = (list) => {
 const parseByDescription = (item) => {
 	if(item.description){
 		return ner(item.description)
-		.then(nerToTags, (err) => Promise.resolve(null))
+		.then(nerToTags)
 		.then(tagsToCountries)
 		.then(addCountries(item))
+		.catch((r) => null)
 	}
 	return item
 }
@@ -62,13 +63,11 @@ const main = (list) => {
 	return byDescription(list)
 }
 
-// i'm sorry for what's below this line... it was an accident :D
 const all = () => dokus.all().then(main)
 const arte = () => dokus.arte().then(main)
 const daserste = () => dokus.daserste().then(main)
 const dw = () => dokus.dw().then(main)
 const mdr = () => dokus.mdr().then(main)
-const rbb = () => dokus.rbb().then(main)
 const swr = () => dokus.swr().then(main)
 
-module.exports = {all, arte, daserste, mdr, swr, rbb, dw}
+module.exports = {all, arte, daserste, mdr, swr, dw}
