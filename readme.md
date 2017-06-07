@@ -7,6 +7,7 @@ Try to match meta data from documentaries fetched using the [dokus](https://gith
 [![dependency status](https://img.shields.io/david/juliuste/doku-tagger.svg)](https://david-dm.org/juliuste/doku-tagger)
 [![dev dependency status](https://img.shields.io/david/dev/juliuste/doku-tagger.svg)](https://david-dm.org/juliuste/doku-tagger#info=devDependencies)
 [![license](https://img.shields.io/github/license/juliuste/doku-tagger.svg?style=flat)](LICENSE)
+[![chat on gitter](https://badges.gitter.im/juliuste.svg)](https://gitter.im/juliuste)
 
 ## Usage
 
