@@ -68,6 +68,7 @@ const arte = () => dokus.arte().then(main)
 const daserste = () => dokus.daserste().then(main)
 const dw = () => dokus.dw().then(main)
 const mdr = () => dokus.mdr().then(main)
+const srf = () => dokus.srf().then(main)
 const swr = () => dokus.swr().then(main)
 
-module.exports = {all, arte, daserste, mdr, swr, dw}
+module.exports = {all, arte, daserste, mdr, srf, swr, dw}
