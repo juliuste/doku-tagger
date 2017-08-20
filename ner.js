@@ -5,20 +5,21 @@ const queue = require('queue')
 
 ner.configEndpoints({
 	"german": {
-		host:'api.dbpedia-spotlight.org',
-		path:'/annotate',
-		port:'80',
-		confidence:0.5,
-		support:0
-	},
-	"english": {
-		host:'api.dbpedia-spotlight.org',
-		path:'/annotate',
+		host:'model.dbpedia-spotlight.org',
+		path:'/de/annotate',
 		port:'80',
 		confidence:0.5,
 		support:0
 	}
+	// "english": {
+	// 	host:'model.dbpedia-spotlight.org',
+	// 	path:'/en/annotate',
+	// 	port:'80',
+	// 	confidence:0.5,
+	// 	support:0
+	// }
 })
+ner.fixToEndpoint("german")
 
 const q = queue({autostart: true, concurrency: 32, timeout: 10000})
 
