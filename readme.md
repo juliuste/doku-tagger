@@ -1,7 +1,5 @@
 # doku-tagger
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/juliuste/doku-tagger.svg)](https://greenkeeper.io/)
-
 Try to match meta data from documentaries fetched using the [dokus](https://github.com/juliuste/dokus/) module with country data.
 
 [![npm version](https://img.shields.io/npm/v/doku-tagger.svg)](https://www.npmjs.com/package/doku-tagger)
