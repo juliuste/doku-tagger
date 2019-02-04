@@ -36,7 +36,7 @@
     "dbpedia-spotlight": "^0.5.27",
     "dokus": "^1.2.1",
     "match-country-german": "^0.3.0",
-    "queue": "^4.2.1"
+    "queue": "^5.0.1"
   },
   "devDependencies": {},
   "scripts": {
